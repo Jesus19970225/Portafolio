@@ -1,7 +1,7 @@
 from fastapi import FastAPI
+from routes.user import user
+
 
 app = FastAPI()
 
-@app.get("/")
-def home():
-    return {"twitch API": "Working!"}
+app.include_router(user)
